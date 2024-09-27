@@ -1,0 +1,3 @@
+[submodule ".vscode"]
+	path = .vscode
+	url = https://github.com/Matthew7577/vscode-cpp-for-windows.git
