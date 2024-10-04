@@ -2,16 +2,8 @@
 using namespace std;
 int main()
 {
-    int x, y;
-    for (x = 1; x <= 10; x++)
-    {
-        cout << "Products of " << x << "\n";
-        for (y = 1; y <= 10; y++)
-        {
-            cout << x * y << "\t";
-        }
-        cout << endl
-             << endl;
-    }
+    int i, j;
+    for (i = 10; j=100, i <= j; i += 2)
+        cout << "value of i : " << i << endl;
     return 0;
 }
