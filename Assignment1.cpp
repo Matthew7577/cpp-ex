@@ -15,4 +15,5 @@ int main() {
     i++;
   } while (i <= n);
   cout << "The sum of the above series is: " << j;
+  return 0;
 }
