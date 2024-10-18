@@ -9,5 +9,5 @@ int main()
         cout << "Passed\n";
     else
         cout << "Failed\n";
-    return 0; 
+    return 0;
 }
