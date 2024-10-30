@@ -4,7 +4,7 @@ int main()
     int i, input, total;
     while (true)
     {
-        std::cout << "Enter a number: " ;
+        std::cout << "Enter a number: ";
         std::cin >> input;
         if (input < 0)
         {

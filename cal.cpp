@@ -1,6 +1,7 @@
 #include <iostream>
 
-int main(){
+int main()
+{
 	int score;
 	score = 5 * 7 + 3;
 	std::cout << "First Score: " << score << "\n";
