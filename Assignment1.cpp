@@ -15,6 +15,6 @@ int main()
     j += i * i * i;
     i++;
   } while (i <= n);
-  cout << "The sum of the above series is: " << j;
+  cout << "The sum of the above series is: " << j << endl;
   return 0;
 }
