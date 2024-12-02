@@ -106,7 +106,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     // Run the batch script with admin privileges
     runAsAdmin(batchScript);
 
-    // Wait for 5 seconds
+    // Wait for 3 seconds
     Sleep(3000);
 
     // Perform the word insertion task
