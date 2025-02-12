@@ -9,28 +9,29 @@ int main()
     cout << "Input day month year: ";
     cin >> day >> month >> year;
     // Check leap year
-    if (year % 4 == 0)
-    {
-        if (year % 100 == 0)
-        {
-            if (year % 400 == 0)
-            {
-                leapYear = true;
-            }
-            else
-            {
-                leapYear = false;
-            }
-        }
-        else
-        {
-            leapYear = true;
-        }
-    }
-    else
-    {
-        leapYear = false;
-    }
+    // if (year % 4 == 0)
+    // {
+    //     if (year % 100 == 0)
+    //     {
+    //         if (year % 400 == 0)
+    //         {
+    //             leapYear = true;
+    //         }
+    //         else
+    //         {
+    //             leapYear = false;
+    //         }
+    //     }
+    //     else
+    //     {
+    //         leapYear = true;
+    //     }
+    // }
+    // else
+    // {
+    //     leapYear = false;
+    // }
+    leapYear = (year % 4 == 0 && year % 100 != 0 || year % 400 == 0);
     switch (month)
     {
     case 1:
