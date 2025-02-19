@@ -2,22 +2,34 @@
 #include <iomanip>
 using namespace std;
 
-int main(){
+int main()
+{
     int i, j;
     cin >> j;
-    if (j % 2 == 0 || j < 0 || j == 0) {
+    if (j % 2 == 0 || j < 0 || j == 0)
+    {
         cout << "E";
-    } else {
+    }
+    else
+    {
         for (i = 0; i < j; i++)
         {
             int x = i + i - 1;
             cout << right << setw(j - i) << "*";
-            while (x > 0){
-                cout << "=";
+            while (x > 0)
+            {
+                if (i == j / 2){
+                    cout << "*";
+                } else {
+                    cout << " ";
+                }
                 x--;
+            }
+            if (i > 0)
+            {
+                cout << "*";
             }
             cout << endl;
         }
-        
     }
 }
