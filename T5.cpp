@@ -17,6 +17,7 @@ void showInfo()
 	cout << "Class     : B03D\n";
 }
 
+double integerPower(double base, int exponent);
 void Q1()
 {
 	const double PI = 3.14159265;
@@ -42,6 +43,18 @@ void Q2()
 	}
 }
 
+void Q3()
+{
+	double base;
+	int exponent;
+	cout << "Enter the base value: ";
+	cin >> base;
+	cout << "Enter the exponent value: ";
+	cin >> exponent;
+	double result = integerPower(base, exponent);
+	cout << base << " to the power of " << exponent << " is " << result;
+}
+
 double integerPower(double base, int exponent)
 {
 	double result = 1;
@@ -64,18 +77,6 @@ double integerPower(double base, int exponent)
 		}
 	}
 	return result;
-}
-
-void Q3()
-{
-	double base;
-	int exponent;
-	cout << "Enter the base value: ";
-	cin >> base;
-	cout << "Enter the exponent value: ";
-	cin >> exponent;
-	double result = integerPower(base, exponent);
-	cout << base << " to the power of " << exponent << " is " << result;
 }
 
 void nChar(int n, char c)
