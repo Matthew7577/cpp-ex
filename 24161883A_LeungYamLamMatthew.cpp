@@ -44,7 +44,6 @@ void Q1()
 	cout << positiveEven << endl;
 	cout << negativeOdd << endl;
 	cout << sum << endl;
-	// Insert your code for Question 1 here
 }
 
 void Q2()
@@ -173,7 +172,6 @@ void Q2()
 		break;
 	}
 	cout << setprecision(2) << fixed << totalCost;
-	// Insert your code for Question 2 here
 }
 
 void Q3()
@@ -206,7 +204,6 @@ void Q3()
 			cout << "\n";
 		}
 	}
-	// Insert your code for Question 3 here
 }
 
 // IMPORTANT: DO NOT MODIFY main()
