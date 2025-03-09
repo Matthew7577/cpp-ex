@@ -14,7 +14,6 @@ void showInfo()
 	cout << "Name      : Leung Yam Lam Matthew\n";
 	cout << "Student ID: 24161883A\n";
 	cout << "Class     : B03D\n";
-	// Fill in your personal particulars here
 }
 
 void Q1()
