@@ -110,7 +110,7 @@ void Q2()
 	myCar.stop();
 	myCar.showSpeed();
 }
-
+// Not completed
 class Phone
 {
 public:
