@@ -59,21 +59,22 @@ void Q2()
 	cout << "Average = " << average << endl;
 }
 
-double calcPI(int x, int n = 1)
-{
-	if (x == 1)
-		return 4.0;
-	double term = ((x - 1) % 2 == 0) ? 4.0 / n : -4.0 / n;
-	return term + calcPI(x - 1, n + 2);
+double calcPI(int terms, int currentTerm = 1, double denominator = 1.0, double sign = 1.0) {
+    if (currentTerm > terms) {
+        return 0.0;
+    }
+    return (sign * (4.0 / denominator)) + calcPI(terms, currentTerm + 1, denominator + 2, -sign);
 }
+
 
 void Q3()
 {
 	int terms;
-	cout << "How many terms for PI: ";
-	cin >> terms;
+    cout << "How many terms for PI: ";
+    cin >> terms;
+	double pi = calcPI(terms);
 	cout << setprecision(15);
-	cout << "PI with " << terms << " terms is " << fixed << calcPI(terms);
+	cout << "PI with " << terms << " terms is " << fixed << setprecision(15) << pi << endl;
 }
 
 long long printBinary(int num)
