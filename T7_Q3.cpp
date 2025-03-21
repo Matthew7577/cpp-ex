@@ -1,21 +1,53 @@
-#include <iostream>
 #include <iomanip>
+#include <iostream>
 #include <string>
-using namespace std; 
+using namespace std;
 
-// Implement the Phone class here
+class Phone
+{
+public:
+    Phone(string brand, string os)
+    {
+        brandName = brand;
+        osType = os;
+    }
+    void setPrice(int a)
+    {
+        if (a > 0)
+        {
+            price = a;
+        }
+        else
+        {
+            price = 0;
+        }
+    }
+    void showConfig()
+    {
+        cout << setprecision(2);
+        cout << left << setw(8) << "Brand: " << brandName << endl;
+        cout << left << setw(8) << "OS: " << osType << endl;
+        cout << left << setw(8) << "Price: " << "$" << fixed << price << endl;
+    }
 
-int main(){
-	Phone iPhone("Apple", "iOS version 6");
-	Phone noteTwo("Samsung", "Android 4.1");
+private:
+    string brandName;
+    string osType;
+    double price;
+};
 
-	iPhone.setPrice(5588);
-	noteTwo.setPrice(4630);
+int main()
+{
+    Phone iPhone("Apple", "iOS version 6");
+    Phone noteTwo("Samsung", "Android 4.1");
 
-	cout << "Specification of iPhone:" << endl;
-	iPhone.showConfig();
-	cout << "\nSpecification of Note 2:" << endl;
-	noteTwo.showConfig();
-	
-	return 0;
+    iPhone.setPrice(5588);
+    noteTwo.setPrice(4630);
+
+    cout << "Specification of iPhone:" << endl;
+    iPhone.showConfig();
+    cout << "\nSpecification of Note 2:" << endl;
+    noteTwo.showConfig();
+
+    return 0;
 }
