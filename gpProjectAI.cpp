@@ -30,13 +30,18 @@ R10
 */
 
 // Header files
-#include <windows.h>
-#include <vector>
-#include <iomanip>
 #include <iostream>
+#include <iomanip>
 #include <string>
+#include <vector>
 #include <random>
 #include <algorithm>
+
+#ifdef _WIN32
+#include <windows.h>
+#else
+#include <unistd.h>
+#endif
 
 // Namespace
 using namespace std;
@@ -135,10 +140,23 @@ string formatStudentName(string name) // Should be usable (Test in another cpp f
 	return formatedFullName;
 }
 
-// Clear screen
+// Clear screen (Compatible with linux/MacOS)
 void clearScreen()
 {
+	#ifdef _WIN32
 	system("cls");
+	#else
+	system("clear");
+	#endif
+}
+
+// Wait for second (Compatible with linux/MacOS)
+void waitForSecond(int seconds){
+	#ifdef _WIN32
+	Sleep(seconds * 1000);
+	#else
+	usleep(seconds * 100000)
+	#endif
 }
 
 // Default data
@@ -148,7 +166,7 @@ void defaultData() // Not completed
 	students.push_back(Student("CHEUNG Jacky", "S232210", "Civil Engineering", 2, 2.48));
 	students.push_back(Student("PAN Peter", "S222343", "Global Business", 3, 3.42));
 	students.push_back(Student("WONG Kam", "S244617", "Educational Psychology", 1, 2.86));
-	// Sleep(1000);
+	// waitForSecond(1);
 }
 
 // Check data loaded or not
@@ -157,7 +175,7 @@ void checkLoaded()
 	if (!dataLoaded)
 	{
 		cout << "Data not loaded!" << endl;
-		// Sleep(1000);
+		// waitForSecond(1);
 	}
 }
 
@@ -165,12 +183,12 @@ void checkLoaded()
 void loadStartingData() // Not completed
 {
 	cout << "Loading data..." << endl;
-	// Sleep(1000);
+	// waitForSecond(1);
 	defaultData();
 	dataLoaded = true;
 	// Load data here
 	cout << "Data loaded successfully!" << endl;
-	// Sleep(1000);
+	// waitForSecond(1);
 }
 
 // Print table's line (Nice)
@@ -214,7 +232,7 @@ void showStudentRecords() // Not completed
 		break;
 	default:
 		cout << "Invalid option!\n\nReturning to main menu..." << endl;
-		Sleep(1000);
+		waitForSecond(1);
 		mainMenu();
 		break;
 	}
@@ -311,7 +329,7 @@ void editStudents() // Not completed
 			break;
 		case 4:
 			cout << "Returning to main menu..." << endl;
-			// Sleep(1000);
+			// waitForSecond(1);
 			break;
 		default:
 			cout << "Invalid option! Please try again.\n";
@@ -354,18 +372,18 @@ void creditsAndExit() // Not completed
 		cout << left << setw(25) << "Unknown" << setw(20) << "Unknown" << setw(20) << "Unknown" << endl;
 		cout << left << setw(25) << "Unknown" << setw(20) << "Unknown" << setw(20) << "Unknown" << endl;
 		cout << left << setw(25) << "Unknown" << setw(20) << "Unknown" << setw(20) << "Unknown" << endl;
-		// Sleep(1000);
+		// waitForSecond(1);
 		exit(0);
 	}
 	else if (exitOption == "n" || exitOption == "N")
 	{
 		cout << "Returning to main menu..." << endl;
-		// Sleep(1000);
+		// waitForSecond(1);
 	}
 	else
 	{
 		cout << "Invalid option! Returning to main menu..." << endl;
-		// Sleep(1000);
+		// waitForSecond(1);
 	}
 }
 
@@ -409,7 +427,7 @@ void mainMenu()
 			break;
 		default:
 			cout << "Invalid option! Please try again.\n";
-			// Sleep(1000);
+			// waitForSecond(1);
 			break;
 		}
 	}
