@@ -155,7 +155,7 @@ void waitForSecond(int seconds){
 	#ifdef _WIN32
 	Sleep(seconds * 1000);
 	#else
-	usleep(seconds * 100000)
+	usleep(seconds * 100000);
 	#endif
 }
 
