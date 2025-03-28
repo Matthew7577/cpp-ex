@@ -149,10 +149,22 @@ void Q3()
 class Account
 {
 public:
-    Account(double a) { balance = a; }
-    void credit(double creditAamount) { balance += creditAamount; }
-    void debit(double debitAmount) { balance -= debitAmount; }
-    double getBalance() { return balance; }
+    Account(double a)
+    {
+        balance = a;
+    }
+    void credit(double creditAamount)
+    {
+        balance += creditAamount;
+    }
+    void debit(double debitAmount)
+    {
+        balance -= debitAmount;
+    }
+    double getBalance()
+    {
+        return balance;
+    }
 
 private:
     double balance;
@@ -163,7 +175,7 @@ void transfer(Account &a1, Account &a2)
     double amount;
     cout << "How much to transfer: ";
     cin >> amount;
-    if (amount < a1.getBalance())
+    if (a1.getBalance() >= amount)
     {
         a1.debit(amount);
         a2.credit(amount);
