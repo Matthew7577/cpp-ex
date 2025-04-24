@@ -70,21 +70,14 @@ void swapString(char str1[], char str2[])
 
 void Q3()
 {
-	char buffer[80];
-	char msgs[10][15] = {
-		"a", "ab", "abc", "abcd", "abcde", "abcdef", 
-		"abcdefg", "abcdefgh", "abcdefghi", "abcdefghij"
-	};
-	
-	// Put strings in msgs into buffer
-	// Your codes should be inserted here.
-	
-	// Print the buffer content
-	cout << "buffer is:" << endl;
-	cout << buffer;
-
-	// Show the length of buffer, using strlen()
-	// Your codes should be inserted here.
+	char buffer[80] = ""; // Initialize buffer
+	char msgs[10][15] = { "a", "ab", "abc", "abcd", "abcde", "abcdef", "abcdefg", "abcdefgh", "abcdefghi", "abcdefghij" };
+	for (int i = 0; i < 10; i++) {
+		strcat_s(buffer, msgs[i]);
+		strcat_s(buffer, "\n");
+	}
+	cout << "buffer is:\n" << buffer;
+	cout << "Length of buffer is: " << strlen(buffer);
 }
 
 const int NMSG = 3;		// (Global) maximum no. of messages
@@ -92,11 +85,25 @@ const int MAXLEN = 80;	// (Global) maximum length of each message
 
 void printReverse(char [][MAXLEN]);	// prototype
 
+void printReverse(char msg[][MAXLEN]) {
+	for (int i = NMSG - 1; i >= 0; i--) { 
+		cout << "Message " << i << ": ";
+		int len = strlen(msg[i]);
+		for (int j = len - 1; j >= 0; j--) 
+			cout << msg[i][j];
+		cout << endl;
+	}
+}
+
 void Q4()
 {
-	char message[NMSG][MAXLEN];
-
-	// Your code should be inserted here
+	char msg[NMSG][MAXLEN];
+	for (int i = 0; i < NMSG; i++) {
+		cout << "Enter message " << i << ": ";
+		cin.ignore();
+		cin.getline(msg[i], MAXLEN);
+	}
+	printReverse(msg);
 }
 
 void Q5()
@@ -147,7 +154,7 @@ int main()
 			cout << "No such question " << prog_choice << endl;
 			break;
 		}
-	} while (prog_choice != 'q');
+	 } while (prog_choice != 'q');
 
 	cout << "Program terminates. Good bye!" << endl;
 	return 0;
